@@ -1,0 +1,38 @@
+https://www.hackerrank.com/challenges/weather-observation-station-19/problem
+
+
+"Consider [pic] and [pic] to be two points on a 2D plane where [pic] are the respective minimum and maximum values of Northern Latitude (LAT_N) and
+
+ [pic] are the respective minimum and maximum values of Western Longitude (LONG_W) in STATION.
+
+Query the Euclidean Distance between points 
+and and format your answer to display
+
+ decimal digits.
+
+Input Format
+
+The STATION table is described as follows:
+
+[Station.jpg]
+
+where LAT_N is the northern latitude and LONG_W is the western longitude. 
+
+
+
+
+"
+
+SELECT ROUND(POWER(
+(POWER((b-a),2) +
+ POWER((d-c),2)),0.5), 4) answer 
+
+FROM(	SELECT MIN(lat_n) a,
+           
+		MAX(lat_n) b, 
+           
+		MIN(long_w) c , 
+           
+		MAX(long_w) d 
+    
+	FROM station) E;
